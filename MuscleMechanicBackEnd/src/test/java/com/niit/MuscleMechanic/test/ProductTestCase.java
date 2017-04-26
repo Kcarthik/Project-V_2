@@ -1,4 +1,4 @@
-package com.niit.MuscleMechanic.MuscleMechanicBackEnd;
+package com.niit.MuscleMechanic.test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,11 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.niit.MuscleMechanic.DAO.ProductDAO;
-import com.niit.MuscleMechanic.DAO.ProductDAOImpl;
+import com.niit.MuscleMechanic.model.Category;
 import com.niit.MuscleMechanic.model.Product;
 
 
-public class ProductTest {
+public class ProductTestCase {
 	@Autowired
     static AnnotationConfigApplicationContext context;
 
@@ -20,8 +20,10 @@ public class ProductTest {
 	static Product product;
 	
 	@Autowired
-	static
-	ProductDAO productDAO;
+	
+	static ProductDAO productDAO;
+	
+
 	
 	@BeforeClass
 	public static void initialize()
@@ -29,9 +31,7 @@ public class ProductTest {
 		context = new AnnotationConfigApplicationContext();
 		context.scan("com.niit.MuscleMechanic");
 		context.refresh();
-		
-		productDAO=context.getBean(ProductDAOImpl.class);
-		
+		productDAO=(ProductDAO) context.getBean("productDAO");
 		product=context.getBean(Product.class);
 		
 	}
@@ -45,6 +45,7 @@ public class ProductTest {
 		product.setName("Muscle mechanic");
 		product.setPrice(2500);
 		product.setQuantity(3);
+		
 		boolean flag= productDAO.insert(product);
 	    assertEquals("",true,flag);
 	}

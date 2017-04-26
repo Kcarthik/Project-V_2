@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.niit.MuscleMechanic.model.Category;
 
 
-@Repository
+@Repository("categoryDAO")
 @Transactional
 public class CategoryDAOImpl implements CategoryDAO {
 	@Autowired

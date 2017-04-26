@@ -6,8 +6,13 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.MuscleMechanic.model.Supplier;
+
+@Repository("supplierDAO")
+@Transactional
 
 public class SupplierDAOimpl implements SupplierDAO{
 	@Autowired
@@ -22,7 +27,7 @@ public class SupplierDAOimpl implements SupplierDAO{
 		session.save(ob);
 		session.flush();
 		session.close();
-		System.out.println("Category Inserted");
+		System.out.println("supplier value Inserted");
 		}
 		
 		catch (Exception e)

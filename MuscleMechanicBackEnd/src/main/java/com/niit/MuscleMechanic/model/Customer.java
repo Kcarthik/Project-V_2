@@ -12,6 +12,7 @@ import javax.validation.Valid;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.stereotype.Component;
 
 
 

@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.MuscleMechanic.model.Product;
-@Repository
+@Repository("productDAO")
 @Transactional
 
 public class ProductDAOImpl implements ProductDAO{
@@ -55,7 +55,7 @@ public class ProductDAOImpl implements ProductDAO{
 	public List<Product> retrieve() {
 		Session session = sessionFactory.openSession();
 		Query q = session.createQuery("from Product");
-		List<Product> ob = (List<Product>) q.list();
+		List<Product> ob =  q.list();
 		return ob;
 	}
 

@@ -1,4 +1,4 @@
-package com.niit.MuscleMechanic.MuscleMechanicBackEnd;
+package com.niit.MuscleMechanic.test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -30,7 +30,7 @@ public class CategoryTest {
 		context.scan("com.niit.MuscleMechanic");
 		context.refresh();
 		
-		categoryDAO=context.getBean(CategoryDAOImpl.class);
+		categoryDAO=(CategoryDAO) context.getBean("categoryDAO");
 		
 		category=context.getBean(Category.class);
 		

@@ -18,19 +18,12 @@ public class Product {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	
 private int id;
-
 private String name;
-
-
 private String description;
-
-
 private double price;
-
-
 private int quantity;
-
 
 
 @ManyToOne(fetch=FetchType.EAGER)

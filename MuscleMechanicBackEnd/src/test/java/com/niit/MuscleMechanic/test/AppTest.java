@@ -1,4 +1,4 @@
-package com.niit.MuscleMechanic.MuscleMechanicBackEnd;
+package com.niit.MuscleMechanic.test;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

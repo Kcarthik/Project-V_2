@@ -9,6 +9,7 @@ import com.niit.MuscleMechanic.model.CustomerOrder;
 
 public class CustomerOrderDAOImpl implements CustomerOrderDAO {
  @Autowired
+
  private SessionFactory sessionFactory;
  
  
